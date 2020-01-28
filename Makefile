@@ -1,13 +1,16 @@
-.PHONY: test install
+.PHONY: clean test install release
+
+clean:
+	dotnet clean
 
 install:
-	nuget restore CSharpHTTPClient/CSharpHTTPClient.sln
+	@dotnet --version || (echo "Dotnet is not installed, please install Dotnet CLI"; exit 1);
+	dotnet restore
 	nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 test: install
-	xbuild /p:Configuration=Release CSharpHTTPClient/CSharpHTTPClient.sln
-	mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe UnitTest/bin/Release/UnitTest.dll -domain:None
+	dotnet build ./CSharpHTTPClient/CSharpHTTPClient.csproj -c Release
+	dotnet test ./UnitTest/UnitTest.csproj -c Release -f netcoreapp2.1
 	curl -s https://codecov.io/bash > .codecov
 	chmod +x .codecov
 	./.codecov
-
