@@ -6,7 +6,7 @@
     <PlatformTarget>anycpu</PlatformTarget>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <OutputType>Library</OutputType>
-    <AssemblyOriginatorKeyFile>./csharphttpclient.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>./csharpHttpClient.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <DebugSymbols Condition=" '$(TargetFramework)' == 'net452' ">true</DebugSymbols>
     <DebugType Condition=" '$(TargetFramework)' == 'net452' ">full</DebugType>
