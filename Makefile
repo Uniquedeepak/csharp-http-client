@@ -5,7 +5,7 @@ clean:
 
 install:
 	@dotnet --version || (echo "Dotnet is not installed, please install Dotnet CLI"; exit 1);
-	dotnet restore
+	dotnet restore CSharpHTTPClient/CSharpHTTPClient.sln
 	nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 test: install
