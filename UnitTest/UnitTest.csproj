@@ -69,10 +69,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CSharpHTTPClient\CSharpHTTPClient.csproj">
       <Project>{26c4841f-ec62-4ec7-b16e-3a7386ea36dc}</Project>
       <Name>CSharpHTTPClient</Name>
